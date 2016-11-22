@@ -14,6 +14,6 @@ def random_phrase():
     return render_template("komigendetblirkul.html", phrase=phrase)
 
 
-@app.route("/<phrase>/")
+@app.route("/<path:phrase>")
 def user_phrase(phrase):
     return render_template("komigendetblirkul.html", phrase=phrase)
