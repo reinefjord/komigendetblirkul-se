@@ -9,7 +9,7 @@ def encoded(b64):
     try:
         phrase = base64.urlsafe_b64decode(b64).decode()
     except:
-        return index(request.full_path)
+        return index(request.path[1:])
 
     return index(phrase)
 
