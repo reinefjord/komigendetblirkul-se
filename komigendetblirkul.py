@@ -18,6 +18,14 @@ def index(phrase):
             db = [line for line in (line.strip() for line in f) if line]
         phrase = random.choice(db)
 
+    counter_file = "counter.db"
+    try:
+        counter = int(open(counter_file, "r").read())
+        counter += 1
+    except:
+        counter = 1
+    open(counter_file, "w").write(str(counter))
+
     b64 = base64.urlsafe_b64encode(phrase.encode()).decode()
 
-    return render_template("komigendetblirkul.html", phrase=phrase, b64=b64)
+    return render_template("komigendetblirkul.html", phrase=phrase, b64=b64, hits=counter)
