@@ -22,6 +22,15 @@ def index(phrase):
             db = [line for line in (line.strip() for line in f) if line]
         phrase = random.choice(db)
 
+    counter_file = "counter.db"
+    try:
+        counter = int(open(counter_file, "r").read())
+        counter += 1
+        print(counter)
+    except:
+        counter = 1
+    open(counter_file, "w").write(str(counter))
+
 
     b64 = base64.urlsafe_b64encode(phrase.encode()).decode()
 
