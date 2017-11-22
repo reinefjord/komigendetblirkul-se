@@ -26,7 +26,6 @@ def index(phrase):
     try:
         counter = int(open(counter_file, "r").read())
         counter += 1
-        print(counter)
     except:
         counter = 1
     open(counter_file, "w").write(str(counter))
