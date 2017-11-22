@@ -30,7 +30,6 @@ def index(phrase):
         counter = 1
     open(counter_file, "w").write(str(counter))
 
-
     b64 = base64.urlsafe_b64encode(phrase.encode()).decode()
 
     return render_template("komigendetblirkul.html", phrase=phrase, b64=b64)
