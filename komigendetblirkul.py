@@ -28,4 +28,4 @@ def index(phrase):
 
     b64 = base64.urlsafe_b64encode(phrase.encode()).decode()
 
-    return render_template("komigendetblirkul.html", phrase=phrase, b64=b64)
+    return render_template("komigendetblirkul.html", phrase=phrase, b64=b64, hits=counter)
