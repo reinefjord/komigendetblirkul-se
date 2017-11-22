@@ -9,9 +9,6 @@ app = Flask(__name__)
 @app.route("/<path:phrase>")
 def index(phrase):
 
-    if request.path == "/favicon.ico":
-        return send_file("favicon.ico")
-
     if phrase:
         try:
             phrase = base64.urlsafe_b64decode(phrase).decode()
