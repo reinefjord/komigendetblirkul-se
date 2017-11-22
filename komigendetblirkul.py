@@ -1,6 +1,6 @@
 import base64
 import random
-from flask import abort, Flask, render_template, request, send_file
+from flask import abort, Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -8,7 +8,6 @@ app = Flask(__name__)
 @app.route("/", defaults={"phrase": None})
 @app.route("/<path:phrase>")
 def index(phrase):
-
     if phrase:
         try:
             phrase = base64.urlsafe_b64decode(phrase).decode()
